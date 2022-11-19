@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* ROOT */
+
+:root {
+    --bgcolor: #121212;
+    --black: #000;
+    --black2: #191919;
+    --white: #fff;
+    --grey: #414141;
+    --white: #fff;
+}
+
+
+/* BODY */
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgcolor);
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 5em;
+    border-bottom: 1px solid var(--black2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+header>ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+
+header>ul>li {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (width <=992px) {
+    header>ul>li {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li:first-child {
+    color: var(--white);
+}
+
+li {
+    padding: 10px;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--black2);
+    border-radius: 50%;
+    color: red;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+li:hover {
+    top: 2px;
+}
+
+li.tooltip {
+    position: relative;
+}
+
+li.tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    font-size: 0.8rem;
+    top: 3em;
+    right: 3em;
+    min-width: 120px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    color: var(--white);
+    background-color: var(--black2);
+}
+
+
+/* MAIN */
+
+.main {
+    margin: auto;
+}
+
+
+/* MAIN VERSE */
+
+.quote {
+    margin: 2rem;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Lora', serif;
+    transition: opacity 1s ease-in;
+}
+
+.fade {
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+
+/* CHANGE & COPY BUTTONS */
+
+.randombutton,
+.copy {
+    cursor: pointer;
+    display: flex;
+    padding: 20px;
+    background-color: var(--black2);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--black2);
+    transition: all 0.3s ease;
+}
+
+.fa-refresh {
+    font-size: 1.5rem;
+}
+
+.randombutton .fa-spin {
+    opacity: 0.5;
+    animation-duration: 0.057s;
+}
+
+.randombutton:hover,
+.copy:hover {
+    opacity: 0.5;
+    border: 1px solid var(--grey);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+
+/* CURRENT DATE */
+
+.datewrapper {
+    text-align: center;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.day {
+    font-size: small;
+    letter-spacing: 5px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+
+/* MAIN LOADING ANIMATION */
+
+#loading {
+    position: fixed;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    display: grid;
+    place-items: center;
+}
+
+
+/* COPY SNACKBAR */
+
+#snackbar {
+    visibility: hidden;
+    width: 100px;
+    text-align: center;
+    background-color: var(--black2);
+    color: var(--white);
+    text-align: center;
+    border-radius: 2px;
+    padding: 8px;
+    position: fixed;
+    z-index: 1;
+    bottom: 50px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+
+/* COPY SNACKBAR ANIMATION */
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 50px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 50px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 50px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(100%);
+        transition: all 1s;
+    }
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 2rem;
+    box-shadow: 0 -2px -4px 0 rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--black2);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--grey);
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Quran Verses</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!-- STYLE.CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li data-tooltip="Support me ❤" class="tooltip">
+                <a href="https://www.buymeacoffee.com/dudzapps">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- MAIN LOADING -->
+    <div id="loading">
+        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+    </div>
+    <!-- MAIN -->
+    <div class="main hidden">
+        <div class="datewrapper">
+            <div class="day"></div>
+            <div class="date"></div>
+        </div>
+        <div class="quote" id="verse"></div>
+        <div class="buttons">
+            <div class="randombutton">
+                <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
+            </div>
+            <div class="copy" tooltip="copy">
+                <i class="fa fa-clone fa-lg" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <!-- SNACKBAR -->
+    <div id="snackbar">Copied!</div>
+
+    <!-- FOOTER -->
+    <footer>
+        <small>quranverses.iamrishan.com</small>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
